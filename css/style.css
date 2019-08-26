@@ -283,6 +283,7 @@ hr {
     margin-right: 16px;
 vertical-align: -6px;
 }
+/*Breaking News*/
 .news-box {
     display: flex;
     max-width: 1160px;
@@ -327,11 +328,103 @@ vertical-align: -6px;
     width: 68px;
     /*height: 66px;*/
     right: 0;
-    top: 0;
+    top: -193px;
     font-size: 16px;
     color: #ffffff;
     text-align: center;
     padding-top: 15px;
     padding-bottom: 14px;
     background-color: #203e38;
+}
+/*what-people*/
+.what-people {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.78),rgba(0, 0, 0, 0.78)), url("../img/what-bg.png");
+    background-position: center;
+    background-attachment: fixed;
+    /*max-width: none;*/
+    padding-bottom: 103px;
+}
+#wpsa {
+    color: #ffffff;
+}
+.wpsa {
+    text-align: center;
+    /*width: 100%;*/
+    max-width: 1160px;
+    margin: 0 auto;
+}
+.wpsa>img {
+    margin-top: 73px;
+}
+.wpsa p {
+    margin-top: 43px;
+    color: #bbbbbb;
+    font-size: 16px;
+}
+#peopleName p {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(24, 207, 171, 255);
+    text-transform: uppercase;
+}
+#peopleName span {
+    display: block;
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #bbbbbb;
+}
+.portrait {
+    display: inline-block;
+    margin-top: 37px;
+    width: 143px;
+    height: 143px;
+    box-sizing: border-box;
+    border: 3px solid #18cfab;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 9px rgba(30, 220, 180, 0.51);
+}
+.scrolling-box {
+
+}
+.arrow {
+    display: inline-block;
+    /*height: 30px;*/
+    /*width: 30px;*/
+    margin-bottom: 14px;
+    padding: 9px 12px 8px 11px ;
+    border: 2px solid #bbbbbb;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: center;
+    color: #bbbbbb;
+}
+#firstArrow {
+    margin-right: 33px;
+}
+.portrait-mini {
+    display: inline-block;
+    margin-top: 37px;
+    width: 62px;
+    height: 62px;
+    box-sizing: border-box;
+    margin-right: 37px;
+    /*border: 3px solid #18cfab;*/
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 3px rgba(30,220,180,0.51);
+}
+.portrait-mini:last-child {
+    margin-right: 33px;
+}
+footer {
+    background-color: #22353f;
+    text-align: center;
+}
+.footer {
+    text-align: center;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+.footer p {
+    padding: 47px 0;
 }
