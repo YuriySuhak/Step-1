@@ -307,10 +307,21 @@ hr {
 .amazing-tabs-title:hover {
     box-shadow: 0 -2px 0 0 #18cfab;
 }
-#pics {
-    display: inline-block;
-    margin-top: 70px;
-}
+#picsBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*margin: 0 auto -2px auto;*/
+    max-width: 1160px;
+    margin: 70px auto 0 auto;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    }
+#picsBlock>img {
+    margin: 0;
+    padding: 0;
+ }
 .button-plus {
     display: inline-block;
     color: #ffffff;
@@ -320,7 +331,8 @@ hr {
     background-color: #00cbf6;
     padding: 22px;
     width: 166px;
-    margin-right: 28px;
+    /*margin-right: 28px;*/
+    margin-top: 71px;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
