@@ -57,9 +57,23 @@ removePics($gallery);
 addPics($category, amount);
 //What People Say About theHam
 
-$(".portrait-mini").on('click', function () {
-    console.log($(this).attr('src'));
-    let dd = $(this).attr('src');
-    $(".portrait").attr('src', dd);
+// $(".portrait-mini-box").on('click', 'img', function () {
+//     console.log($(this).attr('src'));
+//     let dd = $(this).attr('src');
+//     $(".portrait").attr('src', dd);
+//     $(".portrait-mini").removeClass("portrait-mini-active");
+//     $(this).addClass("portrait-mini-active");
+// });
 
+let picNumber = 1;
+let dd = 'img/portrait1.png';
+
+$(".scrolling-box").on('click', 'div', function () {
+               picNumber = $(this).index();
+    console.log($(this).index());
+    console.log($(".scrolling-box>div>img").eq(picNumber-1).attr('src'));
+    $(".portrait-mini").removeClass("portrait-mini-active");
+    $(".scrolling-box>div>img").eq(picNumber-1).addClass("portrait-mini-active");
+    dd = $(".scrolling-box>div>img").eq(picNumber-1).attr('src');
+    $(".portrait").attr('src', dd);
 });
