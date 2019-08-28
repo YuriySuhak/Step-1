@@ -293,6 +293,10 @@ hr {
 /*amazing*/
 #amazingBar {
     max-width: 610px;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid #ebebeb;
+    margin: 70px auto 0 auto;
 }
 .amazing-tabs-title {
      width: 22.2%;
@@ -319,8 +323,8 @@ hr {
     width: 100%;
     }
 #picsBlock>img {
-    margin: 0;
-    padding: 0;
+    /*margin: 0;*/
+    /*padding: 0;*/
  }
 .button-plus {
     display: inline-block;
@@ -346,6 +350,9 @@ hr {
     margin-right: 16px;
 vertical-align: -6px;
 }
+.hidden {
+    display: none;
+}
 /*Breaking News*/
 .news-box {
     display: flex;
@@ -356,7 +363,15 @@ vertical-align: -6px;
 }
 .news {
     margin-top: 45px;
+    background-color: #203e38;
+    font-size: 0;
+    color: rgba(113, 113, 113, 255);
+    text-decoration: none;
 }
+.news:hover {
+     background-color: #18cfab;
+     color: rgba(24, 207, 171, 255);
+ }
 .news-article {
     width: 100%;
     background-color: #f8fcfe;
@@ -364,47 +379,35 @@ vertical-align: -6px;
     border-top: none;
     box-sizing: border-box;
 }
-.news-article a {
+.news-article p {
     display: block;
     padding-top: 14px;
-    text-decoration: none;
-    color: rgba(113, 113, 113, 255);
+    color: inherit;
     font-size: 18px;
     font-weight: bold;
 }
-.news-article a:hover {
-    color: rgba(24, 207, 171, 255);
-}
 .news-article span {
     display: inline-block;
-   padding-top: 14px;
+    padding-top: 14px;
     padding-bottom: 12px;
     font-size: 14px;
     color: rgba(119, 119, 119, 255);
     }
 .img-date {
     position: relative;
-    background-color: #203e38;
-    font-size: 0;
-    background-clip: border-box;
+    background-color: inherit;
 }
 .img-date div {
     position: absolute;
-    /*display: block;*/
     width: 68px;
-    /*height: 66px;*/
     right: 0;
-    top: -208px;
+    top: 0;
     font-size: 16px;
     color: #ffffff;
     text-align: center;
     padding-top: 15px;
-    /*padding-bottom: 14px;*/
     background-color: inherit;
     }
-.img-date:hover {
-    background-color: #18cfab;
-}
 .img-date div>p {
     padding-bottom: 14px;
 }
