@@ -6,29 +6,29 @@ for (let i = 1; i < $OurS.length; ++i) {
 let marker = 0;
 
 $(".cervices-bar").on('click', 'li', function() {
-    $(".cervices-bar>li").removeClass("delta");
+        $(".cervices-bar>li").removeClass("delta");
     $(this).addClass("delta");
     $OurS[marker].hidden = true;
     marker = $(this).index();
     $OurS[marker].hidden = false;
 });
+
 // Our Amazing Work
 let $gallery = $("#picsBlock>img");
-// const $galleryGraphic = $("#picsBlock>.gallery-Graphic");
-// const $galleryLanding = $("#picsBlock>.gallery-Landing");
-// const $galleryWeb = $("#picsBlock>.gallery-Web");
-// const $galleryWordpress = $("#picsBlock>.gallery-Wordpress");
-
 let amount = 12;
 let $category = $gallery;
 
 $("#amazingBar").on('click', 'li', function () {
     console.log($(this).attr('name'));
+    $("#amazingBar>li").removeClass("tabs-tabs-title-active");
+    $(this).addClass("tabs-tabs-title-active");
     const i = $(this).attr('name');
     if(i === "all-Gallery"){
-        $category = $gallery;
+    $category = $gallery;
     }
-    else {$category = $("#picsBlock>img[class='" + i + "']");}
+    else {
+        $category = $("#picsBlock>img[class='" + i + "']");
+    }
     console.log($category);
     removePics($gallery);
     addPics($category, amount);
@@ -52,5 +52,14 @@ function removePics(arr) {
         arr[i].hidden = true
     }
 }
+
 removePics($gallery);
 addPics($category, amount);
+//What People Say About theHam
+
+$(".portrait-mini").on('click', function () {
+    console.log($(this).attr('src'));
+    let dd = $(this).attr('src');
+    $(".portrait").attr('src', dd);
+
+});

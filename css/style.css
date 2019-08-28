@@ -304,12 +304,16 @@ hr {
      padding: 28px 0;
      background-color: #f8fcfe;
     border-left: 1px solid #ebebeb;
+    cursor: pointer;
  }
+.tabs-tabs-title-active {
+    box-shadow: 0 -2px 0 0 #18cfab;
+}
 .amazing-tabs-title:first-child {
     width: 11.1%;
 }
 .amazing-tabs-title:hover {
-    box-shadow: 0 -2px 0 0 #18cfab;
+    color: #18cfab;
 }
 #picsBlock {
     display: flex;
@@ -333,7 +337,7 @@ hr {
     font-weight: bold;
     text-transform: uppercase;
     background-color: #00cbf6;
-    padding: 22px;
+    padding: 14px;
     width: 166px;
     /*margin-right: 28px;*/
     margin-top: 71px;
@@ -460,6 +464,10 @@ vertical-align: -6px;
     border-radius: 50%;
     box-shadow: 0 0 0 9px rgba(30, 220, 180, 0.2);
 }
+/*.portrait-big {*/
+/*    width: 143px;*/
+/*    height: 143px;*/
+/*}*/
 .scrolling-box {
 
 }
