@@ -319,7 +319,6 @@ hr {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /*margin: 0 auto -2px auto;*/
     max-width: 1160px;
     margin: 70px auto 0 auto;
     align-items: center;
@@ -327,9 +326,7 @@ hr {
     width: 100%;
     }
 #picsBlock>img {
-    /*margin: 0;*/
-    /*padding: 0;*/
- }
+}
 .button-plus {
     display: inline-block;
     color: #ffffff;
@@ -397,6 +394,11 @@ vertical-align: -6px;
     font-size: 14px;
     color: rgba(119, 119, 119, 255);
     }
+.news-article>span:first-of-type:after {
+    content: "";
+    border-right: 1px solid rgba(119, 119, 119, 255);
+    margin: 0 20px;
+}
 .img-date {
     position: relative;
     background-color: inherit;
@@ -437,17 +439,21 @@ vertical-align: -6px;
     margin-top: 73px;
 }
 .wpsa p {
-    margin-top: 43px;
+    /*margin-top: 43px;*/
     color: #bbbbbb;
     font-size: 16px;
 }
-#peopleName p {
+.comment-hidden {
+    display: none;
+}
+.peopleName p {
+    margin-top: 43px;
     font-size: 16px;
     font-weight: bold;
     color: rgba(24, 207, 171, 255);
     text-transform: uppercase;
 }
-#peopleName span {
+.peopleName span {
     display: block;
     padding-top: 10px;
     font-size: 16px;
@@ -456,7 +462,7 @@ vertical-align: -6px;
 }
 .portrait {
     display: inline-block;
-    margin-top: 37px;
+    /*margin-top: 37px;*/
     width: 143px;
     height: 143px;
     box-sizing: border-box;
@@ -468,8 +474,10 @@ vertical-align: -6px;
 /*    width: 143px;*/
 /*    height: 143px;*/
 /*}*/
-.scrolling-box {
-
+.comment-box {
+    height: 133px;
+    margin-bottom: 37px;
+    margin-top: 43px;
 }
 .arrow {
     display: inline-block;
@@ -487,7 +495,7 @@ vertical-align: -6px;
 .arrow:hover {
     background-color: #18cfab;
 }
-#firstArrow {
+#prevArrow {
     margin-right: 33px;
 }
 .portrait-mini {
@@ -500,6 +508,7 @@ vertical-align: -6px;
     border-radius: 50%;
     box-shadow: 0 0 0 4px rgba(30,220,180,0.2);
     cursor: pointer;
+    transition: all 333ms ease;
 }
 .portrait-mini-active {
     border: 1px solid #18cfab;
@@ -517,7 +526,7 @@ vertical-align: -6px;
 }
 .portrait-mini:hover {
     /*position: absolute;*/
-    top: -7px;
+    transform: translateY(-7px);
 }
 /*footer*/
 footer {

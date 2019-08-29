@@ -57,23 +57,54 @@ removePics($gallery);
 addPics($category, amount);
 //What People Say About theHam
 
-// $(".portrait-mini-box").on('click', 'img', function () {
-//     console.log($(this).attr('src'));
-//     let dd = $(this).attr('src');
-//     $(".portrait").attr('src', dd);
-//     $(".portrait-mini").removeClass("portrait-mini-active");
-//     $(this).addClass("portrait-mini-active");
-// });
-
 let picNumber = 1;
-let dd = 'img/portrait1.png';
 
 $(".scrolling-box").on('click', 'div', function () {
-               picNumber = $(this).index();
-    console.log($(this).index());
-    console.log($(".scrolling-box>div>img").eq(picNumber-1).attr('src'));
+    hideCurrent();
+    picNumber = $(this).index();
+    let $picWay = $(".scrolling-box>div>img").eq(picNumber-1).attr('src');
+    console.log($picWay);
+    switchComment($picWay);
+});
+
+$("#nextArrow").on('click',  function () {
+    hideCurrent();
+if(picNumber < 4) {
+    picNumber += 1;
+}
+else {
+    picNumber = 1;
+}
+    let $picWay = $(".scrolling-box>div>img").eq(picNumber-1).attr('src');
+    console.log($picWay);
+    switchComment($picWay);
+});
+
+$("#prevArrow").on('click',  function () {
+    hideCurrent();
+if(picNumber > 1 ) {
+    picNumber -= 1;
+}
+else {
+    picNumber = 4;
+}
+    let $picWay = $(".scrolling-box>div>img").eq(picNumber-1).attr('src');
+    console.log($picWay);
+    switchComment($picWay);
+});
+
+function hideCurrent() {
+    $(".comment-box>div").eq(picNumber-1).slideToggle(700);
+}
+
+function switchComment(picWay) {
+    console.log(picNumber);
     $(".portrait-mini").removeClass("portrait-mini-active");
     $(".scrolling-box>div>img").eq(picNumber-1).addClass("portrait-mini-active");
-    dd = $(".scrolling-box>div>img").eq(picNumber-1).attr('src');
-    $(".portrait").attr('src', dd);
-});
+    $(".portrait").attr('src', picWay);
+    // $(".comment-box>div").addClass('comment-hidden');
+    // $(".comment-box>div").slideToggle(700);
+    // $(".comment-box>div").eq(picNumber-1).removeClass('comment-hidden');
+    $(".comment-box>div").eq(picNumber-1).slideToggle(700);
+}
+
