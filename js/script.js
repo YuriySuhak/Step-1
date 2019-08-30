@@ -55,6 +55,27 @@ function removePics(arr) {
 
 removePics($gallery);
 addPics($category, amount);
+//+hover
+
+$("#picsBlock>img").hover(function () {
+    // console.log($(this));
+    // $(this).slideToggle();
+    const coord = $(this).offset();
+    $(this).animate({ opacity: 0 }, 0);
+        console.log($(this).position());
+        console.log(coord);
+        $("#hover").offset({ top: coord.top, left: coord.left});
+        // $("#hover").animate({ opacity: 1 }, 0);
+    },
+function () {
+    // console.log($(this));
+    // $(this).slideToggle();
+    $(this).animate({ opacity: 1 }, 0);
+    $("#hover").offset({ top: '-300', left: '-300'});
+    // $("#hover").animate({ opacity: 0 }, 0);
+}
+);
+
 //What People Say About theHam
 
 let picNumber = 1;
