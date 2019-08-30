@@ -14,7 +14,7 @@ $(".cervices-bar").on('click', 'li', function() {
 });
 
 // Our Amazing Work
-let $gallery = $("#picsBlock>img");
+let $gallery = $("#picsBlock>div>img");
 let amount = 12;
 let $category = $gallery;
 
@@ -27,9 +27,9 @@ $("#amazingBar").on('click', 'li', function () {
     $category = $gallery;
     }
     else {
-        $category = $("#picsBlock>img[class='" + i + "']");
+        $category = $("#picsBlock>div>img[class='" + i + "']");
     }
-    console.log($category);
+    // console.log($category);
     removePics($gallery);
     addPics($category, amount);
     });
@@ -37,7 +37,7 @@ $("#amazingBar").on('click', 'li', function () {
 $("#morePics").on('click', function () {
     amount += 12;
     $(this).addClass("hidden");
-    console.log(amount);
+    // console.log(amount);
     addPics($category, amount);
 } );
 
@@ -57,24 +57,23 @@ removePics($gallery);
 addPics($category, amount);
 //+hover
 
-$("#picsBlock>img").hover(function () {
-    // console.log($(this));
-    // $(this).slideToggle();
-    const coord = $(this).offset();
-    $(this).animate({ opacity: 0 }, 0);
-        console.log($(this).position());
-        console.log(coord);
-        $("#hover").offset({ top: coord.top, left: coord.left});
-        // $("#hover").animate({ opacity: 1 }, 0);
-    },
-function () {
-    // console.log($(this));
-    // $(this).slideToggle();
-    $(this).animate({ opacity: 1 }, 0);
-    $("#hover").offset({ top: '-300', left: '-300'});
-    // $("#hover").animate({ opacity: 0 }, 0);
-}
-);
+$(".pics-block-cover").hover(function () {
+        // console.log($(this).children('img').attr("name"));
+        const spanText = $(this).children('img').attr("name");
+        $(this).append('<div id="hover" class="pics-hover">\n' +
+        '            <a href="#"><div class="pics-hover-div"><img src="img/chain.png" alt=""></div></a>\n' +
+        '            <a href="#"><div class="pics-hover-div"><img src="img/search-hover.png" alt=""></div></a>\n' +
+        '            <p>creative design</p>\n' +
+        '            <span id="spanText"></span>\n' +
+        '        </div>');
+$("#spanText").text(spanText);
+        $(this).children('img').animate({ opacity: 0 }, 333);
+},
+
+    function () {
+        $("#hover").remove()
+        $(this).children('img').animate({ opacity: 1 }, 333);
+    });
 
 //What People Say About theHam
 
@@ -84,7 +83,7 @@ $(".scrolling-box").on('click', 'div', function () {
     hideCurrent();
     picNumber = $(this).index();
     let $picWay = $(".scrolling-box>div>img").eq(picNumber-1).attr('src');
-    console.log($picWay);
+    // console.log($picWay);
     switchComment($picWay);
 });
 
@@ -97,7 +96,7 @@ else {
     picNumber = 1;
 }
     let $picWay = $(".scrolling-box>div>img").eq(picNumber-1).attr('src');
-    console.log($picWay);
+    // console.log($picWay);
     switchComment($picWay);
 });
 
@@ -110,7 +109,7 @@ else {
     picNumber = 4;
 }
     let $picWay = $(".scrolling-box>div>img").eq(picNumber-1).attr('src');
-    console.log($picWay);
+    // console.log($picWay);
     switchComment($picWay);
 });
 
@@ -119,13 +118,10 @@ function hideCurrent() {
 }
 
 function switchComment(picWay) {
-    console.log(picNumber);
+    // console.log(picNumber);
     $(".portrait-mini").removeClass("portrait-mini-active");
     $(".scrolling-box>div>img").eq(picNumber-1).addClass("portrait-mini-active");
     $(".portrait").attr('src', picWay);
-    // $(".comment-box>div").addClass('comment-hidden');
-    // $(".comment-box>div").slideToggle(700);
-    // $(".comment-box>div").eq(picNumber-1).removeClass('comment-hidden');
-    $(".comment-box>div").eq(picNumber-1).slideToggle(700);
+     $(".comment-box>div").eq(picNumber-1).slideToggle(700);
 }
 
